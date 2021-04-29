@@ -1,6 +1,6 @@
 # web_basics
 
-A new Flutter project.
+Responsive Web UI using responsive_builder.
 
 ## Getting Started
 
