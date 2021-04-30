@@ -4,10 +4,15 @@ import '../navigation_bar/nav_bar_item.dart';
 
 class DrawerItem extends StatelessWidget {
   final String title;
+  final String navigationPath;
   final IconData icon;
 
-  const DrawerItem({Key? key, required this.title, required this.icon})
-      : super(key: key);
+  const DrawerItem({
+    Key? key,
+    required this.title,
+    required this.navigationPath,
+    required this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class DrawerItem extends StatelessWidget {
         children: [
           Icon(icon),
           SizedBox(width: 30),
-          NavBarItem(title),
+          NavBarItem(title, navigationPath),
         ],
       ),
     );
