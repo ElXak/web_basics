@@ -4,7 +4,8 @@ class EpisodesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Episodes'),
+      color: Colors.blue,
+      child: Center(child: Text('Episodes')),
     );
   }
 }
