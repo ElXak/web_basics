@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../data_models/nav_bar_item_model.dart';
@@ -25,9 +26,12 @@ class NavBarItem extends StatelessWidget {
         // SERVICE SHOULD ONLY BE USED FROM A VIEW_MODEL
         locator<NavigationService>().navigateTo(navigationPath);
       },
-      child: ScreenTypeLayout(
-        tablet: NavBarItemDesktop(model: model),
-        mobile: NavBarItemMobile(model: model),
+      child: Provider.value(
+        value: model,
+        child: ScreenTypeLayout(
+          tablet: NavBarItemDesktop(),
+          mobile: NavBarItemMobile(),
+        ),
       ),
     );
   }

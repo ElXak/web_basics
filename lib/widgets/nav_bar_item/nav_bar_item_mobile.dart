@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider_architecture/provider_architecture.dart';
 
 import '../../data_models/nav_bar_item_model.dart';
 
-class NavBarItemMobile extends StatelessWidget {
-  final NavBarItemModel model;
-
-  const NavBarItemMobile({Key? key, required this.model}) : super(key: key);
-
+class NavBarItemMobile extends ProviderWidget<NavBarItemModel> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, NavBarItemModel model) {
     return Padding(
       padding: EdgeInsets.only(left: 30, top: 60),
       child: Row(
