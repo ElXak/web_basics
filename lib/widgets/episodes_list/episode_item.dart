@@ -20,7 +20,7 @@ class EpisodeItem extends StatelessWidget {
           children: [
             SizedBox(
               height: 180,
-              child: Image.network(model.imageUrl, fit: BoxFit.cover),
+              child: Image.network(model.imageUrl!, fit: BoxFit.cover),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),

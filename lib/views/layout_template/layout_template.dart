@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import '../../locator.dart';
-import '../../routing/route_names.dart';
-import '../../routing/router.dart';
-import '../../services/navigation_service.dart';
 import '../../widgets/centered_view/centered_view.dart';
 import '../../widgets/navigation_bar/navigation_bar.dart';
 import '../../widgets/navigation_drawer/navigation_drawer.dart';
 
 class LayoutTemplate extends StatelessWidget {
+  final Widget? child;
+
+  const LayoutTemplate({Key? key, this.child}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
@@ -23,11 +23,14 @@ class LayoutTemplate extends StatelessWidget {
             children: [
               NavigationBar(),
               Expanded(
+                child: child!,
+/*
                 child: Navigator(
                   key: locator<NavigationService>().navigatorKey,
                   onGenerateRoute: generateRoute,
                   initialRoute: HomeRoute,
                 ),
+*/
               ),
             ],
           ),

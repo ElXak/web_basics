@@ -7,7 +7,7 @@ import '../services/api.dart';
 class EpisodesViewModel extends ChangeNotifier {
   final Api _api = locator<Api>();
 
-  late List<EpisodeItemModel>? _episodes;
+  List<EpisodeItemModel>? _episodes;
   List<EpisodeItemModel>? get episodes => _episodes;
 
   Future getEpisodes() async {

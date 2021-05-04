@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
 
+import '../data_models/routing_data.dart';
+import '../extensions/string_extensions.dart';
 import '../views/about/about_view.dart';
+import '../views/episode_details/episode_details.dart';
 import '../views/episodes/episodes_view.dart';
 import '../views/home/home_view.dart';
 import 'route_names.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
-  switch (settings.name) {
+  RoutingData routingData = settings.name!.getRoutingData;
+  switch (routingData.route) {
     case HomeRoute:
       return _getPageRoute(HomeView(), settings);
     case AboutRoute:
       return _getPageRoute(AboutView(), settings);
     case EpisodesRoute:
-    default:
       return _getPageRoute(EpisodesView(), settings);
+    case EpisodeDetailsRoute:
+      int? id = int.tryParse(routingData['id']);
+      return _getPageRoute(EpisodeDetails(id: id!), settings);
+    default:
+      return _getPageRoute(HomeView(), settings);
   }
 }
 

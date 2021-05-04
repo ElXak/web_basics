@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider_architecture/provider_architecture.dart';
+import 'package:stacked/stacked.dart';
 
 import '../../data_models/nav_bar_item_model.dart';
 
-class NavBarItemDesktop extends ProviderWidget<NavBarItemModel> {
+class NavBarItemDesktop extends ViewModelWidget<NavBarItemModel> {
   @override
   Widget build(BuildContext context, NavBarItemModel model) {
     return Text(

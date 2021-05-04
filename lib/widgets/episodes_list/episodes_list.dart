@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:stacked/stacked.dart';
 
 import '../../data_models/episode_item_model.dart';
+import '../../view_models/episode_list_view_model.dart';
 import 'episode_item.dart';
 
 class EpisodesList extends StatelessWidget {
@@ -10,10 +12,24 @@ class EpisodesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 30,
-      runSpacing: 30,
-      children: [...episodes.map((episode) => EpisodeItem(model: episode))],
+    return ViewModelBuilder<EpisodeListViewModel>.reactive(
+      viewModelBuilder: () => EpisodeListViewModel(),
+      builder: (context, model, child) => Wrap(
+        spacing: 30,
+        runSpacing: 30,
+        children: [
+          ...episodes
+              .asMap()
+              .map((index, episode) => MapEntry(
+                  index,
+                  GestureDetector(
+                    onTap: () => model.navigateToEpisode(index),
+                    child: EpisodeItem(model: episode),
+                  )))
+              .values
+              .toList()
+        ],
+      ),
     );
   }
 }

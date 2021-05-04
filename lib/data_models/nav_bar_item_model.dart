@@ -8,6 +8,6 @@ class NavBarItemModel {
   NavBarItemModel({
     required this.title,
     required this.navigationPath,
-    required this.iconData,
+    this.iconData,
   });
 }
