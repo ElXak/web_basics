@@ -2,6 +2,15 @@
 
 Responsive Web UI using responsive_builder, get_it, stacked, provider, http.
 
+# Deploying to Firebase Hosting
+
+1. Open 'firebase-tools-instance-win.exe'
+2. cd to root directory of flutter project
+3. firebase init hosting
+4. public directory = build/web
+5. flutter build web --release --web-renderer html
+6. firebase deploy --only hosting
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
