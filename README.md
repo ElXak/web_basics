@@ -1,6 +1,6 @@
 # web_basics
 
-Responsive Web UI using responsive_builder.
+Responsive Web UI using responsive_builder, get_it, stacked, provider, http.
 
 ## Getting Started
 
